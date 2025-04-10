@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Todo | Premium Task Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="default">
+    <div class="app-container">
+        <div class="glass-card">
+            <header class="app-header">
+                <div class="header-content">
+                    <h1 class="app-title">
+                        <span class="app-icon"><i class="fas fa-tasks"></i></span>
+                        <span>Remly</span>
+                    </h1>
+                    <div class="theme-selector">
+                        <div class="theme-picker">
+                            <div class="theme-option" data-theme="default" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                            <div class="theme-option" data-theme="dark" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);"></div>
+                            <div class="theme-option" data-theme="light" style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);"></div>
+                            <div class="theme-option" data-theme="blue" style="background: linear-gradient(135deg, #00c6fb 0%, #005bea 100%);"></div>
+                            <div class="theme-option" data-theme="green" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);"></div>
+                        </div>
+                    </div>
+                </div>
+                <p class="app-subtitle">Organize your life, one task at a time</p>
+            </header>
+            
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <input type="text" id="todoInput" placeholder="What needs to be done?">
+                    <button id="addBtn" class="add-btn">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="filters">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Tasks</button>
+                    <button class="filter-btn" data-filter="active">Active</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                </div>
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search tasks...">
+                </div>
+            </div>
+            
+            <div class="todo-list-container">
+                <ul id="todoList" class="todo-list"></ul>
+                <div class="empty-state" id="emptyState">
+                    <div class="empty-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>All clear!</h3>
+                    <p>You don't have any tasks here yet</p>
+                </div>
+            </div>
+            
+            <footer class="app-footer">
+                <div class="stats">
+                    <span id="itemsLeft">0 tasks</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <button id="clearCompleted" class="clear-btn">
+                        <i class="fas fa-trash-alt"></i> Clear Completed
+                    </button>
+                </div>
+            </footer>
+        </div>
+        
+        <div class="notification" id="notification"></div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
